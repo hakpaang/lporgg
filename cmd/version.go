@@ -21,26 +21,26 @@ THE SOFTWARE.
 */
 package cmd
 
-import (
-	"fmt"
-	"strings"
+// import (
+// 	"fmt"
+// 	"strings"
 
-	"github.com/spf13/cobra"
-)
+// 	"github.com/spf13/cobra"
+// )
 
-// versionCmd represents the version command
-var versionCmd = &cobra.Command{
-	Use:           "version",
-	Aliases:       []string{"v"},
-	Short:         "Print the version number of lporg",
-	Args:          cobra.NoArgs,
-	SilenceUsage:  true,
-	SilenceErrors: true,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("Version: %s, BuildTime: %s\n", strings.TrimSpace(AppVersion), strings.TrimSpace(AppBuildTime))
-	},
-}
+// // versionCmd represents the version command
+// var versionCmd = &cobra.Command{
+// 	Use:           "version",
+// 	Aliases:       []string{"v"},
+// 	Short:         "Print the version number of lporg",
+// 	Args:          cobra.NoArgs,
+// 	SilenceUsage:  true,
+// 	SilenceErrors: true,
+// 	Run: func(cmd *cobra.Command, args []string) {
+// 		fmt.Printf("Version: %s, BuildTime: %s\n", strings.TrimSpace(AppVersion), strings.TrimSpace(AppBuildTime))
+// 	},
+// }
 
-func init() {
-	rootCmd.AddCommand(versionCmd)
-}
+// func init() {
+// 	rootCmd.AddCommand(versionCmd)
+// }

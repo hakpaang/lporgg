@@ -21,55 +21,54 @@ THE SOFTWARE.
 */
 package cmd
 
-import (
-	"os"
+// import (
+// 	"os"
 
-	"github.com/apex/log"
-	clihander "github.com/apex/log/handlers/cli"
-	"github.com/spf13/cobra"
-)
+// 	"github.com/apex/log"
+// 	"github.com/spf13/cobra"
+// )
 
-var (
-	// Verbose boolean flag for verbose logging
-	Verbose bool
-	// Config stores the path to the config file
-	Config string
-	// UseICloud boolean flag for using iCloud config
-	UseICloud bool
-	// AppVersion stores the plugin's version
-	AppVersion string
-	// AppBuildTime stores the plugin's build time
-	AppBuildTime string
-)
+// var (
+// 	// Verbose boolean flag for verbose logging
+// 	Verbose bool
+// 	// Config stores the path to the config file
+// 	Config string
+// 	// UseICloud boolean flag for using iCloud config
+// 	UseICloud bool
+// 	// AppVersion stores the plugin's version
+// 	AppVersion string
+// 	// AppBuildTime stores the plugin's build time
+// 	AppBuildTime string
+// )
 
-// rootCmd represents the base command when called without any subcommands
-var rootCmd = &cobra.Command{
-	Use:   "lporg",
-	Short: "Organize Your Launchpad",
-}
+// // rootCmd represents the base command when called without any subcommands
+// var rootCmd = &cobra.Command{
+// 	Use:   "lporg",
+// 	Short: "Organize Your Launchpad",
+// }
 
-func setLogLevel(verbose bool) int {
-	if verbose {
-		return int(log.DebugLevel)
-	}
-	return int(log.WarnLevel)
-}
+// func setLogLevel(verbose bool) int {
+// 	if verbose {
+// 		return int(log.DebugLevel)
+// 	}
+// 	return int(log.WarnLevel)
+// }
 
-// Execute adds all child commands to the root command and sets flags appropriately.
-// This is called by main.main(). It only needs to happen once to the rootCmd.
-func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		log.Error(err.Error())
-		os.Exit(1)
-	}
-}
+// // Execute adds all child commands to the root command and sets flags appropriately.
+// // This is called by main.main(). It only needs to happen once to the rootCmd.
+// func Execute() {
+// 	if err := rootCmd.Execute(); err != nil {
+// 		log.Error(err.Error())
+// 		os.Exit(1)
+// 	}
+// }
 
-func init() {
-	log.SetHandler(clihander.Default)
+// func init() {
+// 	log.SetHandler(clihander.Default)
 
-	rootCmd.PersistentFlags().BoolVarP(&Verbose, "verbose", "V", false, "verbose output")
-	rootCmd.PersistentFlags().StringVarP(&Config, "config", "c", "", "config file (default is $CONFIG/lporg/config.yaml)")
-	rootCmd.PersistentFlags().BoolVar(&UseICloud, "icloud", false, "use iCloud for config")
-	// Settings
-	rootCmd.CompletionOptions.HiddenDefaultCmd = true
-}
+// 	rootCmd.PersistentFlags().BoolVarP(&Verbose, "verbose", "V", false, "verbose output")
+// 	rootCmd.PersistentFlags().StringVarP(&Config, "config", "c", "", "config file (default is $CONFIG/lporg/config.yaml)")
+// 	rootCmd.PersistentFlags().BoolVar(&UseICloud, "icloud", false, "use iCloud for config")
+// 	// Settings
+// 	rootCmd.CompletionOptions.HiddenDefaultCmd = true
+// }

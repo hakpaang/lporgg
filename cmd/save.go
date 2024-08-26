@@ -21,41 +21,41 @@ THE SOFTWARE.
 */
 package cmd
 
-import (
-	"github.com/apex/log"
-	"github.com/blacktop/lporg/internal/command"
-	"github.com/spf13/cobra"
-)
+// import (
+// 	"github.com/apex/log"
+// 	"github.com/blacktop/lporg/internal/command"
+// 	"github.com/spf13/cobra"
+// )
 
 // saveCmd represents the save command
-var saveCmd = &cobra.Command{
-	Use:           "save",
-	Short:         "Save current launchpad settings",
-	Args:          cobra.NoArgs,
-	SilenceUsage:  true,
-	SilenceErrors: true,
-	RunE: func(cmd *cobra.Command, args []string) error {
+// var saveCmd = &cobra.Command{
+// 	Use:           "save",
+// 	Short:         "Save current launchpad settings",
+// 	Args:          cobra.NoArgs,
+// 	SilenceUsage:  true,
+// 	SilenceErrors: true,
+// 	RunE: func(cmd *cobra.Command, args []string) error {
 
-		if Verbose {
-			log.SetLevel(log.DebugLevel)
-		}
+// 		if Verbose {
+// 			log.SetLevel(log.DebugLevel)
+// 		}
 
-		conf := &command.Config{
-			Cmd:      cmd.Use,
-			File:     Config,
-			Cloud:    UseICloud,
-			LogLevel: setLogLevel(Verbose),
-		}
+// 		conf := &command.Config{
+// 			Cmd:      cmd.Use,
+// 			File:     Config,
+// 			Cloud:    UseICloud,
+// 			LogLevel: setLogLevel(Verbose),
+// 		}
 
-		if err := conf.Verify(); err != nil {
-			return err
-		}
+// 		if err := conf.Verify(); err != nil {
+// 			return err
+// 		}
 
-		log.Info("Saving launchpad settings")
-		return command.SaveConfig(conf)
-	},
-}
+// 		log.Info("Saving launchpad settings")
+// 		return command.SaveConfig(conf)
+// 	},
+// }
 
-func init() {
-	rootCmd.AddCommand(saveCmd)
-}
+// func init() {
+// 	rootCmd.AddCommand(saveCmd)
+// }

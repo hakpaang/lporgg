@@ -21,8 +21,19 @@ THE SOFTWARE.
 */
 package main
 
-import "github.com/blacktop/lporg/cmd"
+import (
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"github.com/blacktop/lporg/page"
+)
 
 func main() {
-	cmd.Execute()
+	a := app.New()
+	win := a.NewWindow("Hello World")
+	btns := container.NewHBox(page.DefaultBtn(win), page.SaveBtn(win), page.LoadBtn(win), page.RevertBtn(win))
+	content := container.NewVBox(btns)
+	win.Resize(fyne.NewSize(600, 400))
+	win.SetContent(content)
+	win.ShowAndRun()
 }

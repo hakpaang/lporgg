@@ -21,41 +21,41 @@ THE SOFTWARE.
 */
 package cmd
 
-import (
-	"github.com/apex/log"
-	"github.com/blacktop/lporg/internal/command"
-	"github.com/spf13/cobra"
-)
+// import (
+// 	"github.com/apex/log"
+// 	"github.com/blacktop/lporg/internal/command"
+// 	"github.com/spf13/cobra"
+// )
 
-// revertCmd represents the revert command
-var revertCmd = &cobra.Command{
-	Use:           "revert",
-	Short:         "Revert to launchpad settings backup",
-	Args:          cobra.NoArgs,
-	SilenceUsage:  true,
-	SilenceErrors: true,
-	RunE: func(cmd *cobra.Command, args []string) error {
+// // revertCmd represents the revert command
+// var revertCmd = &cobra.Command{
+// 	Use:           "revert",
+// 	Short:         "Revert to launchpad settings backup",
+// 	Args:          cobra.NoArgs,
+// 	SilenceUsage:  true,
+// 	SilenceErrors: true,
+// 	RunE: func(cmd *cobra.Command, args []string) error {
 
-		if Verbose {
-			log.SetLevel(log.DebugLevel)
-		}
+// 		if Verbose {
+// 			log.SetLevel(log.DebugLevel)
+// 		}
 
-		conf := &command.Config{
-			Cmd:      cmd.Use,
-			File:     Config,
-			Cloud:    UseICloud,
-			LogLevel: setLogLevel(Verbose),
-		}
+// 		conf := &command.Config{
+// 			Cmd:      cmd.Use,
+// 			File:     Config,
+// 			Cloud:    UseICloud,
+// 			LogLevel: setLogLevel(Verbose),
+// 		}
 
-		if err := conf.Verify(); err != nil {
-			return err
-		}
+// 		if err := conf.Verify(); err != nil {
+// 			return err
+// 		}
 
-		log.Info("Reverting launchpad settings")
-		return command.LoadConfig(conf)
-	},
-}
+// 		log.Info("Reverting launchpad settings")
+// 		return command.LoadConfig(conf)
+// 	},
+// }
 
-func init() {
-	rootCmd.AddCommand(revertCmd)
-}
+// func init() {
+// 	rootCmd.AddCommand(revertCmd)
+// }
